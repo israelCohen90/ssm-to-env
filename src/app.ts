@@ -5,7 +5,7 @@ const ssm = new AWS.SSM();
 
 async function extractParametersFromSSM(paths: any[]) {
   try {
-    const arr = [];
+    const secretsResult = [];
     for (const item of paths) {
       if (!item) continue;
 
@@ -16,9 +16,9 @@ async function extractParametersFromSSM(paths: any[]) {
         .promise();
       const values = result.Parameters.map((parameter: any) => parameter.Value);
       console.log(`extract: ${item.name}`);
-      arr.push({ name: item.name, value: values[0] });
+      secretsResult.push({ name: item.name, value: values[0] });
     }
-    return arr;
+    return secretsResult;
   } catch (error) {
     console.error("Error retrieving parameters:", error);
     throw error;
@@ -43,7 +43,7 @@ extractParametersFromSSM(list)
       ".env",
       values.map((item) => `${item.name}=${item.value}`).join("\n")
     );
-    console.log("saved .env file");
+    console.log("created .env file");
   })
   .catch((error) => {
     console.error("error: ", error);
