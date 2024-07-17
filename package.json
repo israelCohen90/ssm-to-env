@@ -1,0 +1,22 @@
+{
+  "name": "ssm-to-env",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ssm": "^3.614.0",
+    "aws-sdk": "^2.1659.0"
+  }
+}
