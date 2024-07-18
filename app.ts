@@ -15,7 +15,7 @@ async function extractParametersFromSSM(paths: any[]) {
         })
         .promise();
       const values = result.Parameters.map((parameter: any) => parameter.Value);
-      console.log(`extract: ${item.name}`);
+      console.log(`extracted: ${item.name}`);
       secretsResult.push({ name: item.name, value: values[0] });
     }
     return secretsResult;
