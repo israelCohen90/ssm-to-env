@@ -23,11 +23,11 @@ DB_POSTGRES_DATA_ENDPOINT=/db/postgres/data/endpoint
 
 2. In the root directory of your project, run the following commands:
 
-    ```bash
-    npm install
-    npm run build
-    node dist/app.js
-    ```
+```bash
+npm install
+npm run build
+node dist/app.js
+```
 
 ---
 
