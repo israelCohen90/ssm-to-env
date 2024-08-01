@@ -6,9 +6,14 @@ ssm-to-env is a tool designed to simplify the process of creating a .env file by
 
 ## Demo
 
+https://github.com/user-attachments/assets/d145398a-d3d2-42c1-a820-87a0cdf6e3a2
 
-https://github.com/user-attachments/assets/f73b2b0a-3483-4eaf-b43d-f92c916b2436
+
 ## Instructions
+
+
+
+
 
 1. Add the Key and Value pairs from SSM to your `env` file.
 For example:
