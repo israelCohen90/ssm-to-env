@@ -12,6 +12,7 @@ async function extractParametersFromSSM(paths: any[]) {
       const result = await ssm
         .getParameters({
           Names: [item.path],
+          WithDecryption: true
         })
         .promise();
 
