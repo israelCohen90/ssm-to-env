@@ -16,7 +16,7 @@ https://github.com/user-attachments/assets/92feb47b-e7a8-4669-8757-75feaac9570f
 1. Add the Key and Value pairs from SSM to your `env` file.
 For example:
 
-```TYPE=HTTP
+```
 DB_POSTGRES_DATA_PORT=/db/postgres/data/port
 DB_POSTGRES_DATA_USERNAME=/db/postgres/data/username
 DB_POSTGRES_DATA_ENDPOINT=/db/postgres/data/endpoint
