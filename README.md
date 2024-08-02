@@ -7,9 +7,10 @@ ssm-to-env is a tool designed to simplify the process of creating a .env file by
 ## Demo
 
 
+https://github.com/user-attachments/assets/92feb47b-e7a8-4669-8757-75feaac9570f
+
 
 ## Instructions
-
 
 
 1. Add the Key and Value pairs from SSM to your `env` file.
@@ -29,7 +30,6 @@ DB_REDIS_BLACK_WIDOW_CLUSTERED_PORT=/db/redis/black-widow-clustered/port
 MESSAGE_BROKER_AWS_MQ_DATA_HOST=/message-broker/aws-mq/data/host
 MESSAGE_BROKER_AWS_MQ_DATA_USERNAME=/message-broker/aws-mq/data/username
 MESSAGE_BROKER_AWS_MQ_DATA_PORT=/message-broker/aws-mq/data/port
-
 ```
     
 
