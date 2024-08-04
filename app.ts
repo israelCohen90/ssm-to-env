@@ -4,15 +4,14 @@ AWS.config.update({ region: "eu-west-1" });
 const ssm = new AWS.SSM();
 
 async function extractParametersFromSSM(paths: any[]) {
-  try {
-    const secretsResult = [];
-    for (const item of paths) {
+  const secretsResult = [];
+  for (const item of paths) {
+    try {
       if (!item) continue;
-
       const result = await ssm
         .getParameters({
           Names: [item.path],
-          WithDecryption: true
+          WithDecryption: true,
         })
         .promise();
 
@@ -26,19 +25,22 @@ async function extractParametersFromSSM(paths: any[]) {
         console.log(`extracted from ssm: ${item.name}`);
       }
       secretsResult.push({ name: item.name, value: valuePath });
+    } catch (error) {
+      console.error("Error retrieving parameters:", error);
     }
-    return secretsResult;
-  } catch (error) {
-    console.error("Error retrieving parameters:", error);
-    throw error;
   }
+
+  return secretsResult;
 }
 
 const envFile = fs.readFileSync("env", "utf8");
 const list = envFile.split("\n").map((line: string) => {
-  const sp = line.split("=");
+  let sp = line.split("=");
+  sp = line.split(":");
   const name = sp[0];
-  const path = sp[1];
+  let path = sp[1];
+
+  path = path.split('"')[1];
   if (name)
     return {
       name,
