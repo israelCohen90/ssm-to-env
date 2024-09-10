@@ -7,7 +7,6 @@ async function extractParametersFromSSM(paths: any[]) {
   const secretsResult = [];
   for (const item of paths) {
     try {
-      console.log(item);
       if (!item) continue;
       const result = await ssm
         .getParameters({
@@ -51,8 +50,6 @@ const list = envFile.split("\n").map((line: string) => {
 
 extractParametersFromSSM(list)
   .then((values) => {
-    console.log("xxxxxx")
-    console.log(values)
     fs.writeFileSync(
       ".env",
       values.map((item) => `${item.name}=${item.value}`).join("\n")
