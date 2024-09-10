@@ -36,13 +36,11 @@ async function extractParametersFromSSM(paths: any[]) {
 const envFile = fs.readFileSync("env", "utf8");
 const list = envFile.split("\n").map((line: string) => {
   let sp = line.split("=");
-  sp = line.split(":");
   if (sp.length < 2) {
     return null;
   }
   const name = sp[0];
   let path = sp[1];
-  path = path.split('"')[1];
   if (name)
     return {
       name,
